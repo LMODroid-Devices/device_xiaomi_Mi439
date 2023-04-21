@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_Mi439.mk
+    $(LOCAL_DIR)/lmodroid_Mi439.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_Mi439-user \
-    lineage_Mi439-userdebug \
-    lineage_Mi439-eng
+    lmodroid_Mi439-user \
+    lmodroid_Mi439-userdebug \
+    lmodroid_Mi439-eng
