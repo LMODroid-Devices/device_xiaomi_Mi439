@@ -53,6 +53,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8937
 
+# Filesystem
+PRODUCT_PACKAGES += \
+    e2fsck_ramdisk \
+    tune2fs_ramdisk \
+    resize2fs_ramdisk
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_mi439 \
@@ -80,6 +86,10 @@ PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
+
+# Shims
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
