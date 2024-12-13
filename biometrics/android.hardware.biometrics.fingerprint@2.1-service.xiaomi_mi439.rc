@@ -7,7 +7,7 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     group system input uhid
     disabled
 
-on boot
+on init
     # add for goodix 
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
@@ -32,8 +32,8 @@ on post-fs-data
 on property:vendor.fingerprint.hwmdl=failed
     stop vendor.fps_hal
 
-on property:ro.vendor.xiaomi.device=olive
-    enable vendor.fps_hal
+on zygote-start && property:ro.vendor.xiaomi.device=olive
+    start vendor.fps_hal
 
 # FIXME
 #on property:vendor.fingerprint.hwmdl=fingerprint
